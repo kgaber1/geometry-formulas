@@ -2,7 +2,7 @@
  * Here are some useful Geometry formulas to demonstrate how functions can return values.
  * Also look at the Java Docs.
  * 
- * @author (your name) 
+ * @author (Kevin) 
  * @version (a version number or a date)
  */
 public class Geometry 
@@ -18,9 +18,59 @@ public class Geometry
     {
         return length * width;
     }
+
+    /**
+     * Calculates the area of a trapezoid.
+     *
+     * @param b1  length of base 1 of the trapezoid
+     *  @param b2  length of base 2 of the trapezoid
+     * @param height  height of the trapezoid
+     * @return  area of the trapezoid
+     */
+    public static double trapezoidArea(double b1, double b2, double height) 
+    {
+        return (b1+b2)/2*height;
+    }
     
     /**
-     * Calculates the area of a triange.
+     * Calculates the volume of a rectangular prism.
+     *
+     * @param w width of the prism
+     *  @param h height of base 2 of prism
+     * @param l length of the prism
+     * @return  volume of a rectangular prism
+     */
+    public static double prismVolume(double w, double h, double l) 
+    {
+        return (w*h*l);
+    }
+    
+     /**
+     * Calculates the volume of a cone.
+     *
+     * @param r radius of cone
+     *  @param h height of cone
+     * @return  volume of the cone
+     */
+    public static double coneVolume(double r, double h) 
+    {
+        return (Math.PI * Math.pow(r, 2)* (h / 3));
+    }
+     /**
+     * Calculates the surface area of a rectangular prism.
+     *
+     * @param w width of base 1 of prism
+     *  @param h height of base 2 of the rectangular prism
+     * @param l length of the rectangular prism
+     * @return  area of the trapezoid
+     */
+    public static double prismSurfaceArea(double w, double h, double l) 
+    {
+        return (w*h*l);
+    }
+    
+    /**
+     * Calculates the area of a triangle.
      *
      * @param b  length of base of triangle
      * @param h  height of the triangle
@@ -46,7 +96,7 @@ public class Geometry
         System.out.println(ta1);
         System.out.println(ta2);
         
-        double ra1 = rectangleArea(5.2, 9.3);
+        double ra1 = parallelogramArea(5.2, 9.3);
         System.out.println(ra1);
     }
 }
