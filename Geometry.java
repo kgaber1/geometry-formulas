@@ -56,17 +56,39 @@ public class Geometry
     {
         return (Math.PI * Math.pow(r, 2)* (h / 3));
     }
+    
      /**
      * Calculates the surface area of a rectangular prism.
      *
-     * @param w width of base 1 of prism
-     *  @param h height of base 2 of the rectangular prism
+     * @param w width of the rectangular prism
+     *  @param h height of the rectangular prism
      * @param l length of the rectangular prism
-     * @return  area of the trapezoid
+     * @return surface area of the rectangular prism
      */
     public static double prismSurfaceArea(double w, double h, double l) 
     {
-        return (w*h*l);
+        return (2 * (w * l + h * l + h *w));
+    }
+    
+      /**
+     * Calculates the surface area of a sphere.
+     * @param r radius of the sphere
+     * @return surface area of the sphere
+     */
+    public static double sphereSurfaceArea(double r) 
+    {
+        return 4 * Math.PI * Math.pow(r, 2);
+    }
+    
+     /**
+     * Calculates the hypotenuse of a right triangle.
+     * @param a leg 1 of a right triangle
+     * @param b leg 2 of the right triangle
+     * @return hypotenuse of the right triangle
+     */
+    public static double hypotenuseLength(double a, double b, double c) 
+    {
+        return Math.pow(a, 2) + Math.pow(b, 2);
     }
     
     /**
