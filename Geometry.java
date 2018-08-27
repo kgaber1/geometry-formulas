@@ -86,10 +86,55 @@ public class Geometry
      * @param b leg 2 of the right triangle
      * @return hypotenuse of the right triangle
      */
-    public static double hypotenuseLength(double a, double b, double c) 
+    public static double hypotenuseLength(double a, double b) 
     {
-        return Math.pow(a, 2) + Math.pow(b, 2);
+        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
     }
+    
+      /**
+     * Calculates distance formula
+     *
+     * @param x1 The x value of first coordinate
+     * @param x2 The x value of second coordinate
+     * @param y1 The y value of first coordinate
+     * @param y2 The x value of second coordinate
+     * @return Distance between two points.
+     */
+    
+         public static double distanceFormula(double x1, double x2, double y1, double y2) 
+    {
+        return Math.sqrt((Math.pow(x2 - x1, 2)) + (Math.pow(y2-y1, 2)));
+    }      
+    
+    /**
+     * Calculates slope formula in decimal
+     * 
+     * @param x1 The x value of first coordinate
+     * @param x2 The x value of second coordinate
+     * @param y1 The y value of first coordinate
+     * @param y2 The x value of second coordinate
+     * @return Slope between two points.
+     */
+    
+         public static double slopeFormula(double x1, double x2, double y1, double y2) 
+    {
+        return (y2 - y1) / (x2 - x1);
+    }     
+    
+        /**
+     * Calculates triangle area given 3 sides
+     * 
+     * @param a The side length of first side
+     * @param b The side length of second side
+     * @param c The side length of third side
+     * @return Area of a triangle with 3 sides.
+     */
+    
+         public static double triangleArea(double a, double b, double c) 
+    {
+        double p = (a + b + c) / 2.0;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+    }   
     
     /**
      * Calculates the area of a triangle.
@@ -105,20 +150,63 @@ public class Geometry
         return area;
     }
     
+    
+    /**
+     * calculates the volume of a sphere
+     * @param radius The radius of the sphere used to calculate volume
+     */
     public static double sphereVolume(double radius) 
     {
         return 4.0 / 3.0 * Math.PI * Math.pow(radius, 3);
     }
     
+    /**
+     * Allows for input of the code and displays the output
+     */
     public static void main(String[] args) 
     {
         double ta1 = triangleArea(4.2, 8.1);
         double ta2 = triangleArea(3.0, 123.157);
         
-        System.out.println(ta1);
-        System.out.println(ta2);
+        System.out.println("Triangle Area 1: " + ta1);
+        System.out.println("Triangle Area 2: " + ta2);
         
         double ra1 = parallelogramArea(5.2, 9.3);
-        System.out.println(ra1);
+        System.out.println("Rectangle Area: " + ra1);
+                //Trapezoid Area
+        double tra1 = trapezoidArea(5.2, 7.2, 3.0);
+        System.out.println("Trapezoid Area: " + tra1);
+        
+        //Rectangular Prism Volume
+        double rpv1 = prismVolume(6.2, 6.5, 6.0);
+        System.out.println("Rectangular Prism Volume: " + rpv1);
+        
+        //Cone Volume
+        double cv1 = coneVolume(6.2, 6.4);
+        System.out.println("Cone Volume: " + cv1);
+            
+        //Rectangular Prism Surface Area
+        double rpsa1 = prismSurfaceArea(5.2, 4.5, 3.0);
+        System.out.println("Rectangular Prism Surface Area: " + rpsa1); 
+        
+        //Sphere Surface Area
+        double ssa1 = sphereSurfaceArea(2.8);
+        System.out.println("Sphere Surface Area: " + ssa1);
+        
+        //Hypotenuse of Right Triangle
+        double hrt1 = hypotenuseLength(6.5, 6.5);
+        System.out.println("Hypotenuse of Right Triangle: " + hrt1);
+        
+        //Distance Formula
+        double df1 = distanceFormula(5.2, 1.5, 3.0, 4.2);
+        System.out.println("Distance Formula: " + df1);
+        
+        //Slope Formula
+        double sf1 = slopeFormula(2.2, 3.5, 4.0, 4.1);
+        System.out.println("Slope Formula: " + sf1);
+
+        //Heron's Formula
+        double hf1 = triangleArea(2 , 3 , 4);
+        System.out.println("Area of a triangle given 3 sides: " + hf1);
     }
 }
